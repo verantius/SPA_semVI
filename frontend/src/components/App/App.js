@@ -9,11 +9,11 @@ import Login from '../Login/Login'
 
 function App() {
   
-  const [token, setToken] = useState();
+  //const [token, setToken] = useState();
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
   return (
     
     <Router>
@@ -33,5 +33,3 @@ function App() {
       }
       
       export default App;
-      
-      // <Route path='/login' element={<Login />} />
