@@ -5,9 +5,12 @@ import Register from './pages/Register'
 
 import Header from './components/Header'
 
-
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+// 
 function App() {
   return (
+    <>
     <Router>
         <div className='container'>
           <Header/>
@@ -18,6 +21,8 @@ function App() {
           </Routes>
         </div>
       </Router>
+     <ToastContainer />
+    </>
   );
 }
 
