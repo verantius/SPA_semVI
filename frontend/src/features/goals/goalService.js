@@ -1,3 +1,4 @@
+//import { getDefaultMiddleware } from '@reduxjs/toolkit';
 import axios from 'axios'
 //te routy sa chronione
 // Create new goal
@@ -12,7 +13,7 @@ const createGoal = async (goalData, token) => {
 
   return response.data
 }
-
+/*
 // Get user goals
 const getGoals = async (token) => {
   const config = {
@@ -38,7 +39,7 @@ const deleteGoal = async (goalId, token) => {
 
   return response.data
 }
-
+*/
 const goalService = {
   createGoal,
   //getGoals,

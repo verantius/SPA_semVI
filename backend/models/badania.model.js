@@ -10,11 +10,15 @@ const badaniaModel = mongoose.Schema(
     },
     produkt: {
       type: String,
-      required: true,
+      //required: true,
     },
     zbadano: {
       type: String,
-      required: true,
+      //required: true,
+    },
+    text: {
+      type: String,
+      //required: [true, 'Please add a text value'],
     },
     //startdate: { type: Date, required: true },
   },

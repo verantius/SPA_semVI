@@ -10,7 +10,7 @@ function GoalForm() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    dispatch(createGoal({ text }))
+    dispatch(createGoal({text}))
     setText('')
   }
 
@@ -18,7 +18,7 @@ function GoalForm() {
     <section className='form'>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='text'>Goal</label>
+          <label htmlFor='text'>Badaniee</label>
           <input
             type='text'
             name='text'

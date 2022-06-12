@@ -20,16 +20,17 @@ const badania_get_all = asyncHandler(async (req, res, next) => {
 //OPIS: dodaj jedno badanie - METODA: POST - ROUTE: /badania/
 const badania_add_new = asyncHandler(async (req, res, next) => {
 
-    if (!req.body.produkt) 
-        res.status(400).json({ wiadomosc: 'pole z produktami jest puste'})
-    if (!req.body.zbadano) 
-        res.status(400).json({ wiadomosc: 'pole z badane jest puste'})
+    // if (!req.body.produkt) 
+    //     res.status(400).json({ wiadomosc: 'pole z produktami jest puste'})
+    // if (!req.body.zbadano) 
+    //     res.status(400).json({ wiadomosc: 'pole z badane jest puste'})
         
     try {
         const badanie = new Badania ({
             user: req.user.id,
             produkt: req.body.produkt,
             zbadano: req.body.zbadano,
+            text:req.body.text//<--
         })
         await badanie.save()
         res.status(200).json(badanie)
