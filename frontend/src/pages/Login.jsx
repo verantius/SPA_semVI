@@ -7,23 +7,23 @@ import { login, reset } from '../features/auth/authSlice'
 //import Spinner from '../components/Spinner'
 
 function Login() {
-  const [formData, setFormData] = useState({
+  const [info_user, set_info_user] = useState({
     email: '',
     password: '',
   })
 
-  const { email, password } = formData
+  const { email, password } = info_user
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const { user,/* isLoading,*/ isError, isSuccess, message } = useSelector(
+  const { user,/* isLoading,*/ isError, isSuccess, /*message*/ } = useSelector(
     (state) => state.auth
   )
 
   useEffect(() => {
     if (isError) {
-      alert(message)
+      alert("wystąpił błąd strony")
     }
 
     if (isSuccess || user) {
@@ -31,10 +31,10 @@ function Login() {
     }
 
     dispatch(reset())
-  }, [user, isError, isSuccess, message, navigate, dispatch])
+  }, [user, isError, isSuccess, /*message,*/ navigate, dispatch])
 
   const onChange = (e) => {
-    setFormData((prevState) => ({
+    set_info_user((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))

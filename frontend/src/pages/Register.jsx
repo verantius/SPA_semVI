@@ -7,25 +7,25 @@ import { register, reset } from '../features/auth/authSlice'
 //import Spinner from '../components/Spinner'
 
 function Register() {
-  const [formData, setFormData] = useState({
+  const [info_user, set_info_user] = useState({
    // name: '',
     email: '',
     password: '',
     password2: '',
   })
 
-  const { /*name,*/ email, password, password2 } = formData
+  const { /*name,*/ email, password, password2 } = info_user
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const { user,/* isLoading,*/ isError, isSuccess, message } = useSelector(
+  const { user,/* isLoading,*/ isError, isSuccess, /*message*/ } = useSelector(
     (state) => state.auth
   )
 
   useEffect(() => {
     if (isError) {
-      alert(message)
+      alert("wystąpił błąd strony")
     }
 
     if (isSuccess || user) {
@@ -33,10 +33,10 @@ function Register() {
     }
 
     dispatch(reset())
-  }, [user, isError, isSuccess, message, navigate, dispatch])
+  }, [user, isError, isSuccess, /*message,*/ navigate, dispatch])
 
   const onChange = (e) => {
-    setFormData((prevState) => ({
+    set_info_user((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))
