@@ -96,7 +96,7 @@ const user_login = asyncHandler(async (req, res) => {
 
 // Generate JWT
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_USE, {expiresIn: '5m'})
+  return jwt.sign({ id }, process.env.JWT_USE, {expiresIn: '25m'})
 }
 
 module.exports = {
