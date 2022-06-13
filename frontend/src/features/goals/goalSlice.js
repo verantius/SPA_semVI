@@ -32,7 +32,6 @@ export const createGoal = createAsyncThunk(
     }
   }
 )
-/*
 // Get user goals
 export const getGoals = createAsyncThunk(
   'goals/getAll',
@@ -50,7 +49,8 @@ export const getGoals = createAsyncThunk(
       return thunkAPI.rejectWithValue(error)
     }
   }
-)
+  )
+  /*
 
 // Delete user goal
 export const deleteGoal = createAsyncThunk(
@@ -95,16 +95,16 @@ export const goalSlice = createSlice({
       // .addCase(getGoals.pending, (state) => {
       //   state.isLoading = true
       // })
-      // .addCase(getGoals.fulfilled, (state, action) => {
-      //   //state.isLoading = false
-      //   state.isSuccess = true
-      //   state.goals = action.payload
-      // })
-      // .addCase(getGoals.rejected, (state, action) => {
-      //   //state.isLoading = false
-      //   state.isError = true
-      //   state.message = action.payload
-      // })
+      .addCase(getGoals.fulfilled, (state, action) => {
+        //state.isLoading = false
+        state.isSuccess = true
+        state.goals = action.payload
+      })
+      .addCase(getGoals.rejected, (state, action) => {
+        //state.isLoading = false
+        state.isError = true
+        //state.message = action.payload
+      })
       // // .addCase(deleteGoal.pending, (state) => {
       // //   state.isLoading = true
       // // })

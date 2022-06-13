@@ -1,4 +1,3 @@
-//import { getDefaultMiddleware } from '@reduxjs/toolkit';
 import axios from 'axios'
 //te routy sa chronione
 // Create new goal
@@ -13,7 +12,6 @@ const createGoal = async (goalData, token) => {
 
   return response.data
 }
-/*
 // Get user goals
 const getGoals = async (token) => {
   const config = {
@@ -21,12 +19,13 @@ const getGoals = async (token) => {
       Authorization: `Bearer ${token}`,
     },
   }
-
+  
   const response = await axios.get('http://localhost:4000/badania/', config)
-
+  
   return response.data
 }
 
+/*
 // Delete user goal
 const deleteGoal = async (goalId, token) => {
   const config = {
