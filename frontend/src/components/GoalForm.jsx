@@ -7,9 +7,10 @@ function GoalForm() {
   const [info_badania, set_info_badania] = useState({
     produkt: '',
     zbadano: '',
+    text: '',
   })
 
-  const { produkt, zbadano } = info_badania
+  const { produkt, zbadano, text } = info_badania
 
   const dispatch = useDispatch()
 
@@ -25,6 +26,7 @@ function GoalForm() {
     const badaniaData = {
       produkt,
       zbadano,
+      text,
     }
 
     dispatch(createGoal(badaniaData))
@@ -51,6 +53,16 @@ function GoalForm() {
             id='zbadano'
             value={zbadano}
             placeholder='zbadano?'
+            onChange={onChange}
+          />
+        </div>
+        <div className='form-group'>
+          <input
+            type='text'
+            name='text'
+            id='text'
+            value={text}
+            placeholder='text?'
             onChange={onChange}
           />
         </div>

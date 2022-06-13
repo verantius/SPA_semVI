@@ -25,7 +25,7 @@ const getGoals = async (token) => {
   return response.data
 }
 
-/*
+
 // Delete user goal
 const deleteGoal = async (goalId, token) => {
   const config = {
@@ -38,11 +38,11 @@ const deleteGoal = async (goalId, token) => {
 
   return response.data
 }
-*/
+
 const goalService = {
   createGoal,
-  //getGoals,
-  //deleteGoal,
+  getGoals,
+  deleteGoal,
 }
 
 export default goalService

@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-//import { getDefaultMiddleware } from '@reduxjs/toolkit';
 import goalService from './goalService'
 
 const initialState = {
@@ -50,8 +49,7 @@ export const getGoals = createAsyncThunk(
     }
   }
   )
-  /*
-
+  
 // Delete user goal
 export const deleteGoal = createAsyncThunk(
   'goals/delete',
@@ -70,7 +68,7 @@ export const deleteGoal = createAsyncThunk(
     }
   }
 )
-*/
+
 export const goalSlice = createSlice({
   name: 'goal',
   initialState,
@@ -111,9 +109,9 @@ export const goalSlice = createSlice({
       // .addCase(deleteGoal.fulfilled, (state, action) => {
       //   //state.isLoading = false
       //   state.isSuccess = true
-      //   state.goals = state.goals.filter(
-      //     (goal) => goal._id !== action.payload.id
-      //   )
+      //   // state.goals = state.goals.filter(
+      //   //   (goal) => goal._id !== action.payload.id
+      //   // )
       // })
       // .addCase(deleteGoal.rejected, (state, action) => {
       //   //state.isLoading = false
