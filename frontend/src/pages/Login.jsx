@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { FaSignInAlt } from 'react-icons/fa'
+import { BsFillPersonCheckFill } from 'react-icons/bs'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 //import { toast } from 'react-toastify'
@@ -59,9 +59,9 @@ function Login() {
     <>
       <section className='heading'>
         <h1>
-          <FaSignInAlt /> Login
+          <BsFillPersonCheckFill /> Zaloguj
         </h1>
-        <p>Login and start setting goals</p>
+        <p>zaloguj się, aby dodać badanie</p>
       </section>
 
       <section className='form'>

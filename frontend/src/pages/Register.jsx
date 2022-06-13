@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom' //for navigate
 //import { toast } from 'react-toastify'
-import { FaUser } from 'react-icons/fa'
+import { BsFillPeopleFill } from 'react-icons/bs'
 import { register, reset } from '../features/auth/authSlice'
 //import Spinner from '../components/Spinner'
 
@@ -66,9 +66,9 @@ function Register() {
     <>
       <section className='heading'>
         <h1>
-          <FaUser /> Register
+          <BsFillPeopleFill /> Rejestracja
         </h1>
-        <p>Please create an account</p>
+        <p>zarejestruj się, aby rozpocząć planowanie badań</p>
       </section>
       <section className='form'>
       
