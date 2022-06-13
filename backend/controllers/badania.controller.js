@@ -85,12 +85,12 @@ const badania_remove = asyncHandler(async (req, res, next) => {
     if (badanie.user.toString() !== req.user.id) 
         res.status(401).json({ wiadomosc: 'brak autoryzacji'})
      
-    Badania.findByIdAndDelete(req.params.id)
-    .then(() => res.json('Exercise deleted.'))
-    .catch(err => res.status(400).json('Error: ' + err));
-    //await badanie.remove()
+    // Badania.findByIdAndDelete(req.params.id)
+    // .then(() => res.status(200).json({ usunięto : req.params.id }))
+    // .catch(err => res.status(400).json('Error: ' + err));
+    await badanie.remove()
         
-    //res.status(200).json({ id: req.params.id })
+    res.status(200).json({ id: req.params.id })
 
     
 })
