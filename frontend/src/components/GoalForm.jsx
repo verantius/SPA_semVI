@@ -4,15 +4,31 @@ import { createGoal } from '../features/goals/goalSlice'
 import {  BsPlus } from 'react-icons/bs'
 
 function GoalForm() {
-  const [text, setText] = useState('')
+  const [info_badania, set_info_badania] = useState({
+    produkt: '',
+    zbadano: '',
+  })
+
+  const { produkt, zbadano } = info_badania
 
   const dispatch = useDispatch()
 
+  const onChange = (e) => {
+    set_info_badania((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
   const onSubmit = (e) => {
     e.preventDefault()
 
-    dispatch(createGoal({text}))
-    setText('')
+    const badaniaData = {
+      produkt,
+      zbadano,
+    }
+
+    dispatch(createGoal(badaniaData))
+    set_info_badania('')
   }
 
   return (
@@ -21,10 +37,21 @@ function GoalForm() {
         <div className='form-group'>
           <input
             type='text'
-            name='text'
-            id='text'
-            value={text}
-            onChange={(e) => setText(e.target.value)}
+            name='produkt'
+            id='produkt'
+            value={produkt}
+            placeholder='podaj produkt'
+            onChange={onChange}
+          />
+        </div>
+        <div className='form-group'>
+          <input
+            type='text'
+            name='zbadano'
+            id='zbadano'
+            value={zbadano}
+            placeholder='zbadano?'
+            onChange={onChange}
           />
         </div>
         <div className='form-group'>

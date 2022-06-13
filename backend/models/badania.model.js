@@ -16,10 +16,10 @@ const badaniaModel = mongoose.Schema(
       type: String,
       //required: true,
     },
-    text: {
-      type: String,
-      //required: [true, 'Please add a text value'],
-    },
+    // text: {
+    //   type: String,
+    //   //required: [true, 'Please add a text value'],
+    // },
     //startdate: { type: Date, required: true },
   },
   {
