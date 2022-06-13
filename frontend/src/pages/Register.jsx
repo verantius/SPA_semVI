@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom' //for navigate
 //import { toast } from 'react-toastify'
-import { BsFillPeopleFill } from 'react-icons/bs'
+import { BsFillPeopleFill, BsCaretRight } from 'react-icons/bs'
 import { register, reset } from '../features/auth/authSlice'
 //import Spinner from '../components/Spinner'
 
@@ -81,7 +81,7 @@ function Register() {
               id='email'
               name='email'
               value={email}
-              placeholder='Enter your email'
+              placeholder='Podaj swój email'
               onChange={onChange}
             />
           </div>
@@ -92,7 +92,7 @@ function Register() {
               id='password'
               name='password'
               value={password}
-              placeholder='Enter password'
+              placeholder='Podaj hasło'
               onChange={onChange}
             />
           </div>
@@ -103,13 +103,13 @@ function Register() {
               id='password2'
               name='password2'
               value={password2}
-              placeholder='Confirm password'
+              placeholder='Potwierdź hasło'
               onChange={onChange}
             />
           </div>
           <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
-              Submit
+            <button type='submit' className='btn btn-block'><BsCaretRight />
+              zarejestruj
             </button>
           </div>
         </form>

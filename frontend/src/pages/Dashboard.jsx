@@ -30,8 +30,8 @@ function Dashboard() {
     <>
     
     <section className='heading'>
-    <h1>Welcome {user && user.email}</h1>
-    <p>Goals Dashboard</p>
+    <h1>Witaj {user && user.email}</h1>
+    <p>rozpocznij badania</p>
     </section>
     
     <GoalForm />

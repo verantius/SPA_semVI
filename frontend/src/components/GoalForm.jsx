@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createGoal } from '../features/goals/goalSlice'
+import {  BsPlus } from 'react-icons/bs'
 
 function GoalForm() {
   const [text, setText] = useState('')
@@ -18,7 +19,6 @@ function GoalForm() {
     <section className='form'>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='text'>Badaniee</label>
           <input
             type='text'
             name='text'
@@ -29,10 +29,11 @@ function GoalForm() {
         </div>
         <div className='form-group'>
           <button className='btn btn-block' type='submit'>
-            Add Goal
+          <p>Dodaj </p><BsPlus/>
           </button>
         </div>
       </form>
+          <label htmlFor='text'>lista badań</label>
     </section>
   )
 }

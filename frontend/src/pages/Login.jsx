@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BsFillPersonCheckFill } from 'react-icons/bs'
+import { BsFillPersonCheckFill, BsCaretRight } from 'react-icons/bs'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 //import { toast } from 'react-toastify'
@@ -73,7 +73,7 @@ function Login() {
               id='email'
               name='email'
               value={email}
-              placeholder='Enter your email'
+              placeholder='Podaj email'
               onChange={onChange}
             />
           </div>
@@ -84,14 +84,14 @@ function Login() {
               id='password'
               name='password'
               value={password}
-              placeholder='Enter password'
+              placeholder='Podaj hasło'
               onChange={onChange}
             />
           </div>
 
           <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
-              Submit
+            <button type='submit' className='btn btn-block'><BsCaretRight />
+              zaloguj
             </button>
           </div>
         </form>
