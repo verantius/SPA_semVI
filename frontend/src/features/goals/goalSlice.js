@@ -23,6 +23,7 @@ export const createGoal = createAsyncThunk(
     } catch (error) {
 
       return thunkAPI.rejectWithValue(error)
+      
     }
   }
 )
