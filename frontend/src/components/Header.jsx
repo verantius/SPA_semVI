@@ -2,13 +2,13 @@ import { BsFillPersonCheckFill, BsFillPeopleFill, BsFillPersonXFill,BsPatchCheck
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { logout, reset } from '../features/auth/authSlice'
-//import { logout, reset } from '../features/form/formSlice'
+//import { logout, reset } from '../features/auth/authSlice'
+import { logout, reset } from '../features/form/formSlice'
 
 function Header() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { user } = useSelector((state) => state.auth)
+  const { user } = useSelector((state) => state.form)
 
   const onLogout = () => {
     dispatch(logout())

@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 import { BsFillPeopleFill, BsCaretRight } from 'react-icons/bs'
 
-import { register, reset } from '../features/auth/authSlice'
-//import { register, reset } from '../features/form/formSlice'
+//import { register, reset } from '../features/auth/authSlice'
+import { register, reset } from '../features/form/formSlice'
 
 
 function Register() {
@@ -22,7 +22,7 @@ function Register() {
   const dispatch = useDispatch()
 
   const { user, isError, isSuccess } = useSelector(
-    (state) => state.auth
+    (state) => state.form
   )
 
   useEffect(() => {

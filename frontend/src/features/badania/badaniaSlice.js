@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import goalService from './goalService'
-//import badaniaSend from './badaniaSend'
+//import goalService from './badaniaSend'
+import badaniaSend from './badaniaSend'
 //na dole 3 refy
 
 const initialState = {
@@ -16,8 +16,8 @@ export const createGoal = createAsyncThunk(
   async (goalData, thunkAPI) => {
     try {
 
-      const token = thunkAPI.getState().auth.user.token
-      const reply = await goalService.createGoal(goalData, token)
+      const token = thunkAPI.getState().form.user.token
+      const reply = await badaniaSend.createGoal(goalData, token)
       return reply
 
       
@@ -34,8 +34,8 @@ export const getGoals = createAsyncThunk(
   //
   async (_, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().auth.user.token
-      return await goalService.getGoals(token)
+      const token = thunkAPI.getState().form.user.token
+      return await badaniaSend.getGoals(token)
     } catch (error) {
 
       return thunkAPI.rejectWithValue(error)
@@ -49,8 +49,8 @@ export const deleteGoal = createAsyncThunk(
   //
   async (id, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().auth.user.token
-      return await goalService.deleteGoal(id, token)
+      const token = thunkAPI.getState().form.user.token
+      return await badaniaSend.deleteGoal(id, token)
     } catch (error) {
       
       return thunkAPI.rejectWithValue(error)

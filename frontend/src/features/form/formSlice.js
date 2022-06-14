@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import authService from './authService'
-//import formSend from './formSend'
+//import authService from './formSend'
+import formSend from './formSend'
 //+3 inne na dole
 //+2 na logowaniu
 
@@ -21,7 +21,7 @@ export const register = createAsyncThunk(
 //'form/register'
   async (user, thunkAPI) => {
     try {
-      return await authService.register(user)
+      return await formSend.register(user)
     } catch (error) {
     
       return thunkAPI.rejectWithValue(error)
@@ -32,7 +32,7 @@ export const register = createAsyncThunk(
 // logowanie uzytkownika
 export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   try {
-    return await authService.login(user)
+    return await formSend.login(user)
   } catch (error) {
     
     return thunkAPI.rejectWithValue(error)
@@ -40,12 +40,12 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
 })
 
 export const logout = createAsyncThunk('auth/logout', async () => {
-  await authService.logout()
+  await formSend.logout()
 })
 
 export const authSlice = createSlice({
-  name: 'auth',
-  //name:'form'
+  //name: 'auth',
+  name:'form',
   initialState,
   reducers: {
     //resetuje pola po zalogowaniu/zarejestrowaniu tez

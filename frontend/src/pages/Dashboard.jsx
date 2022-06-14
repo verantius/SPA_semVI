@@ -5,13 +5,13 @@ import GoalForm from '../components/GoalForm'
 
 import GoalItem from '../components/GoalItem'
 
-import { getGoals, reset } from '../features/goals/goalSlice'
-//import { getGoals, reset } from '../features/badania/badaniaSlice'
+//import { getGoals, reset } from '../features/goals/goalSlice'
+import { getGoals, reset } from '../features/badania/badaniaSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { user } = useSelector((state) => state.auth)
+  const { user } = useSelector((state) => state.form)
 
   const { badania, isError} = useSelector(
     (state) => state.badania

@@ -3,8 +3,8 @@ import { BsFillPersonCheckFill, BsCaretRight } from 'react-icons/bs'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { login, reset } from '../features/auth/authSlice'
-//import { login, reset } from '../features/auth/formSlice'
+//import { login, reset } from '../features/auth/authSlice'
+import { login, reset } from '../features/form/formSlice'
 
 
 function Login() {
@@ -19,7 +19,7 @@ function Login() {
   const dispatch = useDispatch()
 
   const { user, isError, isSuccess } = useSelector(
-    (state) => state.auth
+    (state) => state.form
   )
 
   useEffect(() => {
