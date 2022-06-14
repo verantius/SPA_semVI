@@ -48,7 +48,7 @@ function Dashboard() {
             ))}
           </div>
         ) : (
-          <h3>You have not set any goals</h3>
+          <h3>Nie dodałeś jeszcze badań</h3>
         )}
       </section>
     
