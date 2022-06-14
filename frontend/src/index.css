@@ -95,13 +95,13 @@ h3 {
 
 .goals {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
 }
 
 .goal {
-  background-color: #bfbfbf;
-  margin: 10px 0;
+  background-color: #7dd5ee;
+  margin: 5px 0;
   padding: 20px 0 10px;
   position: relative;
 }
@@ -114,7 +114,14 @@ h3 {
   border: none;
   background: none;
 }
-
+.goal:hover {
+  transform: scale(1.1);
+}
+.close:hover {
+  border: red;
+  background: red;
+  transform: scale(1.1);
+}
 .form,
 .content {
   width: 70%;
@@ -190,7 +197,7 @@ h3 {
 .btn:hover {
   transform: scale(0.98);
 }
-
+/*
 .loadingSpinnerContainer {
   position: fixed;
   top: 0;
@@ -212,7 +219,7 @@ h3 {
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
-
+*/
 @keyframes spin {
   0% {
     transform: rotate(0deg);

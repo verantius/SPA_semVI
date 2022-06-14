@@ -5,7 +5,6 @@ import GoalForm from '../components/GoalForm'
 
 import GoalItem from '../components/GoalItem'
 
-//import Spinner from '../components/Spinner'
 import { getGoals, reset } from '../features/goals/goalSlice'
 
 function Dashboard() {
@@ -13,7 +12,7 @@ function Dashboard() {
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
 
-  const { goals, isError, /*isLoading, message*/ } = useSelector(
+  const { goals, isError} = useSelector(
     (state) => state.goals
   )
   useEffect(() => {
@@ -27,7 +26,7 @@ function Dashboard() {
     return () => {
       dispatch(reset())
     }
-  }, [user, navigate, isError, dispatch/*, message*/])
+  }, [user, navigate, isError, dispatch])
 
   return (
     <>
@@ -35,8 +34,7 @@ function Dashboard() {
       <section className='heading'>
         <h1>Witaj {user && user.email}</h1>
         <p>rozpocznij badania</p>
-        <p>{goals.text}</p>
-        <p>{goals.zbadano}</p>
+        
       </section>
       
       <GoalForm />
