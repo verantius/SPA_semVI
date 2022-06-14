@@ -93,20 +93,20 @@ h3 {
   color: #828282;
 }
 
-.goals {
+.badania {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 10px;
 }
 
-.goal {
+.badanie {
   background-color: #7dd5ee;
   margin: 5px 0;
   padding: 20px 0 10px;
   position: relative;
 }
 
-.goal .close {
+.badanie .close {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -114,7 +114,7 @@ h3 {
   border: none;
   background: none;
 }
-.goal:hover {
+.badanie:hover {
   transform: scale(1.1);
 }
 .close:hover {

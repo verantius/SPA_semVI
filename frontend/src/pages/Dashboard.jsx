@@ -6,14 +6,15 @@ import GoalForm from '../components/GoalForm'
 import GoalItem from '../components/GoalItem'
 
 import { getGoals, reset } from '../features/goals/goalSlice'
+//import { getGoals, reset } from '../features/badania/badaniaSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
 
-  const { goals, isError} = useSelector(
-    (state) => state.goals
+  const { badania, isError} = useSelector(
+    (state) => state.badania
   )
   useEffect(() => {
     if (isError) {
@@ -41,10 +42,10 @@ function Dashboard() {
 
       <section className='content'>
 
-        {goals.length > 0 ? (
-          <div className='goals'>
-            {goals.map((goal) => (
-              <GoalItem key={goal._id} goal={goal} />
+        {badania.length > 0 ? (
+          <div className='badania'>
+            {badania.map((badanie) => (
+              <GoalItem key={badanie._id} badanie={badanie} />
             ))}
           </div>
         ) : (

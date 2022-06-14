@@ -5,14 +5,14 @@ import goalService from './goalService'
 //na dole 3 refy
 
 const initialState = {
-  goals: [],
+  badania: [],
   isError: false,
   isSuccess: false,
 }
 
 // dodaj badanie
 export const createGoal = createAsyncThunk(
-  'goals/create',
+  'badania/create',
   async (goalData, thunkAPI) => {
     try {
 
@@ -30,8 +30,8 @@ export const createGoal = createAsyncThunk(
 )
 // pobierz badania
 export const getGoals = createAsyncThunk(
-  'goals/getAll',
-  //badania
+  'badania/getAll',
+  //
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -45,7 +45,8 @@ export const getGoals = createAsyncThunk(
   
 // usuń badania
 export const deleteGoal = createAsyncThunk(
-  'goals/delete',
+  'badania/delete',
+  //
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -59,7 +60,7 @@ export const deleteGoal = createAsyncThunk(
 
 //stan
 export const goalSlice = createSlice({
-  name: 'goal',
+  name: 'badanie',
   initialState,
   reducers: {
     reset: (state) => initialState,
@@ -68,7 +69,7 @@ export const goalSlice = createSlice({
     builder
       .addCase(createGoal.fulfilled, (state, action) => {
         state.isSuccess = true
-        state.goals.push(action.payload)
+        state.badania.push(action.payload)
       })
       .addCase(createGoal.rejected, (state, action) => {
         state.isError = true
@@ -76,15 +77,15 @@ export const goalSlice = createSlice({
       })
       .addCase(getGoals.fulfilled, (state, action) => {
         state.isSuccess = true
-        state.goals = action.payload
+        state.badania = action.payload
       })
       .addCase(getGoals.rejected, (state, action) => {
         state.isError = true
       })
       .addCase(deleteGoal.fulfilled, (state, action) => {
         state.isSuccess = true
-        state.goals = state.goals.filter(
-          (goal) => goal._id !== action.payload.id
+        state.badania = state.badania.filter(
+          (badanie) => badanie._id !== action.payload.id
         )
       })
       .addCase(deleteGoal.rejected, (state, action) => {

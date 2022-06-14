@@ -3,16 +3,16 @@ import { useDispatch } from 'react-redux'
 import { deleteGoal } from '../features/goals/goalSlice'
 //import { deleteGoal } from '../features/badania/badaniaSlice'
 
-function GoalItem({ goal }) {
+function GoalItem({ badanie }) {
   const dispatch = useDispatch()
-// <div>{new Date(goal.createdAt).toLocaleString('en-US')}</div>
+// <div>{new Date(badanie.createdAt).toLocaleString('en-US')}</div>
 return (
-  <div className='goal'>
+  <div className='badanie'>
   
-  <h2>{goal.produkt}</h2>
-  <p>{goal.zbadano}</p>
-  <p>{goal.text}</p>
-  <button onClick={() => dispatch(deleteGoal(goal._id))} className='close'>
+  <h2>{badanie.produkt}</h2>
+  <p>{badanie.zbadano}</p>
+  <p>{badanie.text}</p>
+  <button onClick={() => dispatch(deleteGoal(badanie._id))} className='close'>
    X
   </button>
     </div>

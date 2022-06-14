@@ -8,7 +8,7 @@ import goalReducer from '../features/goals/goalSlice'
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    goals: goalReducer,
+    badania: goalReducer,
     //form: authReducer,
     //badania: goalReducer,
   },
