@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom' //for navigate
-//import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom' 
+
 import { BsFillPeopleFill, BsCaretRight } from 'react-icons/bs'
 import { register, reset } from '../features/auth/authSlice'
-//import Spinner from '../components/Spinner'
+
 
 function Register() {
   const [info_user, set_info_user] = useState({
@@ -19,7 +19,7 @@ function Register() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const { user,/* isLoading,*/ isError, isSuccess, /*message*/ } = useSelector(
+  const { user, isError, isSuccess } = useSelector(
     (state) => state.auth
   )
 
@@ -33,7 +33,7 @@ function Register() {
     }
 
     dispatch(reset())
-  }, [user, isError, isSuccess, /*message,*/ navigate, dispatch])
+  }, [user, isError, isSuccess, navigate, dispatch])
 
   const onChange = (e) => {
     set_info_user((prevState) => ({
@@ -57,10 +57,6 @@ function Register() {
       dispatch(register(userData))
     }
   }
-
-  // if (isLoading) {
-  //   return <Spinner />
-  // }
 
   return (
     <>
