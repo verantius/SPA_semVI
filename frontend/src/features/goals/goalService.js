@@ -1,6 +1,6 @@
 import axios from 'axios'
 //te routy sa chronione
-// Create new goal
+// tworzenie badań
 const createGoal = async (goalData, token) => {
   const config = {
     headers: {
@@ -12,7 +12,7 @@ const createGoal = async (goalData, token) => {
 
   return response.data
 }
-// Get user goals
+// pobieranie badań
 const getGoals = async (token) => {
   const config = {
     headers: {
@@ -26,7 +26,7 @@ const getGoals = async (token) => {
 }
 
 
-// Delete user goal
+// usuwanie badań
 const deleteGoal = async (goalId, token) => {
   const config = {
     headers: {

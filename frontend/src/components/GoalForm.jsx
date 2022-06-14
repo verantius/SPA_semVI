@@ -30,7 +30,7 @@ function GoalForm() {
     }
 
     dispatch(createGoal(badaniaData))
-    set_info_badania('')
+    badaniaData('')
   }
 
   return (
