@@ -26,9 +26,12 @@ const logout = () => {
 }
 
 const authService = {
+//const formSend = {
+
   register,
   logout,
   login,
 }
 
 export default authService
+//export default formSend

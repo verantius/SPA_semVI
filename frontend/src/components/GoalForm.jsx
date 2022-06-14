@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { createGoal } from '../features/goals/goalSlice'
 import {  BsPlus } from 'react-icons/bs'
+
+import { createGoal } from '../features/goals/goalSlice'
+//import { createGoal } from '../features/badania/badaniaSlice'
 
 function GoalForm() {
   const [info_badania, set_info_badania] = useState({

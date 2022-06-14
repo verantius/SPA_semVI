@@ -1,5 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+
 import authService from './authService'
+//import formSend from './formSend'
+//+3 inne na dole
+//+2 na logowaniu
 
 // pobierz usera z local storage
 const user = JSON.parse(localStorage.getItem('user'))
@@ -14,6 +18,7 @@ const initialState = {
 // Register user
 export const register = createAsyncThunk(
   'auth/register',
+//'form/register'
   async (user, thunkAPI) => {
     try {
       return await authService.register(user)
@@ -40,6 +45,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 
 export const authSlice = createSlice({
   name: 'auth',
+  //name:'form'
   initialState,
   reducers: {
     //resetuje pola po zalogowaniu/zarejestrowaniu tez

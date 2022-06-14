@@ -1,5 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+
 import goalService from './goalService'
+//import badaniaSend from './badaniaSend'
+//na dole 3 refy
 
 const initialState = {
   goals: [],
@@ -26,6 +29,7 @@ export const createGoal = createAsyncThunk(
 // pobierz badania
 export const getGoals = createAsyncThunk(
   'goals/getAll',
+  //badania
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
