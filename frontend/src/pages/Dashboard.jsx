@@ -18,7 +18,7 @@ function Dashboard() {
       console.log("error")
     }
     if (!user) {
-      navigate('/login')
+      navigate('/home')
     }
     dispatch(pobierzBadanie())
     return () => {

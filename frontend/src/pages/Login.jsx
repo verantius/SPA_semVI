@@ -3,7 +3,6 @@ import { BsFillPersonCheckFill, BsCaretRight } from 'react-icons/bs'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-//import { login, reset } from '../features/auth/authSlice'
 import { login, reset } from '../features/form/formSlice'
 
 
