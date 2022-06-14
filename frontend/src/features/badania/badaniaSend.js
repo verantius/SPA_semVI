@@ -1,7 +1,8 @@
 import axios from 'axios'
 //te routy sa chronione
+
 // tworzenie badań
-const createGoal = async (goalData, token) => {
+const dodajBadanie = async (goalData, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -13,7 +14,7 @@ const createGoal = async (goalData, token) => {
   return response.data
 }
 // pobieranie badań
-const getGoals = async (token) => {
+const pobierzBadanie = async (token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -27,7 +28,7 @@ const getGoals = async (token) => {
 
 
 // usuwanie badań
-const deleteGoal = async (goalId, token) => {
+const usunBadanie = async (goalId, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -39,10 +40,10 @@ const deleteGoal = async (goalId, token) => {
   return response.data
 }
 
-const goalService = {
-  createGoal,
-  getGoals,
-  deleteGoal,
+const badaniaSend = {
+  dodajBadanie,
+  pobierzBadanie,
+  usunBadanie,
 }
 
-export default goalService
+export default badaniaSend

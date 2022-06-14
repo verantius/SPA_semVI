@@ -1,7 +1,5 @@
 import { useDispatch } from 'react-redux'
-
-//import { deleteGoal } from '../features/goals/goalSlice'
-import { deleteGoal } from '../features/badania/badaniaSlice'
+import { usunBadanie } from '../features/badania/badaniaSlice'
 
 function BadaniaOne({ badanie }) {
   const dispatch = useDispatch()
@@ -12,7 +10,7 @@ return (
   <h2>{badanie.produkt}</h2>
   <p>{badanie.zbadano}</p>
   <p>{badanie.text}</p>
-  <button onClick={() => dispatch(deleteGoal(badanie._id))} className='close'>
+  <button onClick={() => dispatch(usunBadanie(badanie._id))} className='close'>
    X
   </button>
     </div>

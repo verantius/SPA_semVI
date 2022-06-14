@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {  BsPlus } from 'react-icons/bs'
-
-//import { createGoal } from '../features/goals/goalSlice'
-import { createGoal } from '../features/badania/badaniaSlice'
+import { dodajBadanie } from '../features/badania/badaniaSlice'
 
 function BadaniaAll() {
   const [info_badania, set_info_badania] = useState({
@@ -31,7 +29,7 @@ function BadaniaAll() {
       text,
     }
 
-    dispatch(createGoal(badaniaData))
+    dispatch(dodajBadanie(badaniaData))
     badaniaData('')
   }
 

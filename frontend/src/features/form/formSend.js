@@ -25,13 +25,13 @@ const logout = () => {
   localStorage.removeItem('user')
 }
 
-const authService = {
-//const formSend = {
+//const authService = {
+const formSend = {
 
   register,
   logout,
   login,
 }
 
-export default authService
-//export default formSend
+//export default authService
+export default formSend

@@ -1,9 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-
-//import authService from './formSend'
 import formSend from './formSend'
-//+3 inne na dole
-//+2 na logowaniu
 
 // pobierz usera z local storage
 const user = JSON.parse(localStorage.getItem('user'))
@@ -17,8 +13,8 @@ const initialState = {
 
 // Register user
 export const register = createAsyncThunk(
-  'auth/register',
-//'form/register'
+  'form/register',
+
   async (user, thunkAPI) => {
     try {
       return await formSend.register(user)
@@ -30,7 +26,7 @@ export const register = createAsyncThunk(
 )
 
 // logowanie uzytkownika
-export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
+export const login = createAsyncThunk('form/login', async (user, thunkAPI) => {
   try {
     return await formSend.login(user)
   } catch (error) {
@@ -39,12 +35,12 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   }
 })
 
-export const logout = createAsyncThunk('auth/logout', async () => {
+export const logout = createAsyncThunk('form/logout', async () => {
   await formSend.logout()
 })
 
-export const authSlice = createSlice({
-  //name: 'auth',
+export const formSlice = createSlice({
+ 
   name:'form',
   initialState,
   reducers: {
@@ -78,5 +74,5 @@ export const authSlice = createSlice({
   },
 })
 
-export const { reset } = authSlice.actions
-export default authSlice.reducer
+export const { reset } = formSlice.actions
+export default formSlice.reducer

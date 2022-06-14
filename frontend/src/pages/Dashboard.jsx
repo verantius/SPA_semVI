@@ -2,11 +2,8 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import BadaniaAll from '../components/BadaniaAll'
-
 import BadaniaOne from '../components/BadaniaOne'
-
-//import { getGoals, reset } from '../features/goals/goalSlice'
-import { getGoals, reset } from '../features/badania/badaniaSlice'
+import { pobierzBadanie, reset } from '../features/badania/badaniaSlice'
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -23,7 +20,7 @@ function Dashboard() {
     if (!user) {
       navigate('/login')
     }
-    dispatch(getGoals())
+    dispatch(pobierzBadanie())
     return () => {
       dispatch(reset())
     }
@@ -52,11 +49,7 @@ function Dashboard() {
           <h3>Nie dodałeś jeszcze badań</h3>
         )}
       </section>
-    
-    
     </>
-    
     )
-    
 }
 export default Dashboard

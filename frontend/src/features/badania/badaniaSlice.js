@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-
-//import goalService from './badaniaSend'
 import badaniaSend from './badaniaSend'
-//na dole 3 refy
+
 
 const initialState = {
   badania: [],
@@ -11,13 +9,13 @@ const initialState = {
 }
 
 // dodaj badanie
-export const createGoal = createAsyncThunk(
+export const dodajBadanie = createAsyncThunk(
   'badania/create',
   async (goalData, thunkAPI) => {
     try {
 
       const token = thunkAPI.getState().form.user.token
-      const reply = await badaniaSend.createGoal(goalData, token)
+      const reply = await badaniaSend.dodajBadanie(goalData, token)
       return reply
 
       
@@ -29,13 +27,13 @@ export const createGoal = createAsyncThunk(
   }
 )
 // pobierz badania
-export const getGoals = createAsyncThunk(
+export const pobierzBadanie = createAsyncThunk(
   'badania/getAll',
   //
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().form.user.token
-      return await badaniaSend.getGoals(token)
+      return await badaniaSend.pobierzBadanie(token)
     } catch (error) {
 
       return thunkAPI.rejectWithValue(error)
@@ -44,13 +42,13 @@ export const getGoals = createAsyncThunk(
   )
   
 // usuń badania
-export const deleteGoal = createAsyncThunk(
+export const usunBadanie = createAsyncThunk(
   'badania/delete',
   //
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().form.user.token
-      return await badaniaSend.deleteGoal(id, token)
+      return await badaniaSend.usunBadanie(id, token)
     } catch (error) {
       
       return thunkAPI.rejectWithValue(error)
@@ -59,7 +57,7 @@ export const deleteGoal = createAsyncThunk(
 )
 
 //stan
-export const goalSlice = createSlice({
+export const badaniaSlice = createSlice({
   name: 'badanie',
   initialState,
   reducers: {
@@ -67,32 +65,32 @@ export const goalSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(createGoal.fulfilled, (state, action) => {
+      .addCase(dodajBadanie.fulfilled, (state, action) => {
         state.isSuccess = true
         state.badania.push(action.payload)
       })
-      .addCase(createGoal.rejected, (state, action) => {
+      .addCase(dodajBadanie.rejected, (state, action) => {
         state.isError = true
         
       })
-      .addCase(getGoals.fulfilled, (state, action) => {
+      .addCase(pobierzBadanie.fulfilled, (state, action) => {
         state.isSuccess = true
         state.badania = action.payload
       })
-      .addCase(getGoals.rejected, (state, action) => {
+      .addCase(pobierzBadanie.rejected, (state, action) => {
         state.isError = true
       })
-      .addCase(deleteGoal.fulfilled, (state, action) => {
+      .addCase(usunBadanie.fulfilled, (state, action) => {
         state.isSuccess = true
         state.badania = state.badania.filter(
           (badanie) => badanie._id !== action.payload.id
         )
       })
-      .addCase(deleteGoal.rejected, (state, action) => {
+      .addCase(usunBadanie.rejected, (state, action) => {
         state.isError = true
       })
   },
 })
 
-export const { reset } = goalSlice.actions
-export default goalSlice.reducer
+export const { reset } = badaniaSlice.actions
+export default badaniaSlice.reducer
