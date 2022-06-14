@@ -3,6 +3,24 @@ import { useDispatch } from 'react-redux'
 import {  BsPlus } from 'react-icons/bs'
 import { dodajBadanie } from '../features/badania/badaniaSlice'
 
+const options = [
+  {
+    label: "Apple",
+    value: "apple",
+  },
+  {
+    label: "Mango",
+    value: "mango",
+  },
+  {
+    label: "Banana",
+    value: "banana",
+  },
+  {
+    label: "Pineapple",
+    value: "pineapple",
+  },
+];
 function BadaniaAll() {
   const [info_badania, set_info_badania] = useState({
     produkt: '',
@@ -56,16 +74,15 @@ function BadaniaAll() {
             onChange={onChange}
           />
         </div>
-        <div className='form-group'>
-          <input
-            type='text'
-            name='text'
-            id='text'
-            value={text}
-            placeholder='text?'
-            onChange={onChange}
-          />
+
+        <div className="select-container">
+          <select>
+            {options.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
         </div>
+
         <div className='form-group'>
           <button className='btn btn-block' type='submit'>
           <p>Dodaj </p><BsPlus/>
