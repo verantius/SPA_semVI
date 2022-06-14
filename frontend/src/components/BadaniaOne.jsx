@@ -10,6 +10,7 @@ return (
   <h2>{badanie.produkt}</h2>
   <p>{badanie.zbadano}</p>
   <p>{badanie.text}</p>
+  
   <button onClick={() => dispatch(usunBadanie(badanie._id))} className='close'>
    X
   </button>
