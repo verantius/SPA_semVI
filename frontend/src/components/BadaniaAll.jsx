@@ -5,7 +5,7 @@ import {  BsPlus } from 'react-icons/bs'
 //import { createGoal } from '../features/goals/goalSlice'
 import { createGoal } from '../features/badania/badaniaSlice'
 
-function GoalForm() {
+function BadaniaAll() {
   const [info_badania, set_info_badania] = useState({
     produkt: '',
     zbadano: '',
@@ -79,4 +79,4 @@ function GoalForm() {
   )
 }
 
-export default GoalForm
+export default BadaniaAll

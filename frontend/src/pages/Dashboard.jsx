@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import GoalForm from '../components/GoalForm'
+import BadaniaAll from '../components/BadaniaAll'
 
-import GoalItem from '../components/GoalItem'
+import BadaniaOne from '../components/BadaniaOne'
 
 //import { getGoals, reset } from '../features/goals/goalSlice'
 import { getGoals, reset } from '../features/badania/badaniaSlice'
@@ -38,14 +38,14 @@ function Dashboard() {
         
       </section>
       
-      <GoalForm />
+      <BadaniaAll />
 
       <section className='content'>
 
         {badania.length > 0 ? (
           <div className='badania'>
             {badania.map((badanie) => (
-              <GoalItem key={badanie._id} badanie={badanie} />
+              <BadaniaOne key={badanie._id} badanie={badanie} />
             ))}
           </div>
         ) : (

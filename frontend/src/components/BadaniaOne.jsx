@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 //import { deleteGoal } from '../features/goals/goalSlice'
 import { deleteGoal } from '../features/badania/badaniaSlice'
 
-function GoalItem({ badanie }) {
+function BadaniaOne({ badanie }) {
   const dispatch = useDispatch()
 // <div>{new Date(badanie.createdAt).toLocaleString('en-US')}</div>
 return (
@@ -19,4 +19,4 @@ return (
   )
 }
 
-export default GoalItem
+export default BadaniaOne
