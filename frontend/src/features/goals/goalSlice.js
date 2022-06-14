@@ -20,10 +20,11 @@ export const createGoal = createAsyncThunk(
       const reply = await goalService.createGoal(goalData, token)
       return reply
 
+      
     } catch (error) {
 
       return thunkAPI.rejectWithValue(error)
-      
+
     }
   }
 )
