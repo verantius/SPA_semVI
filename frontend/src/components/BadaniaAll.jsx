@@ -2,8 +2,12 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {  BsPlus } from 'react-icons/bs'
 import { dodajBadanie } from '../features/badania/badaniaSlice'
-
+//import { option } from './MultiOption'
 const options = [
+  {
+    label: " ",
+    value: " ",
+  },
   {
     label: "Apple",
     value: "apple",
@@ -79,8 +83,9 @@ function BadaniaAll() {
           <select>
             {options.map((option) => (
               <option value={option.value}>{option.label}</option>
-            ))}
-          </select>
+              ))}
+              </select>
+              
         </div>
 
         <div className='form-group'>
