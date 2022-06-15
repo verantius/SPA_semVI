@@ -152,6 +152,8 @@ h3 {
 }
 .select-container {
   margin-bottom: 10px;
+  text-align: left;
+  font-size: 0.9rem;
 }
 .select-container input,
 .select-container textarea,

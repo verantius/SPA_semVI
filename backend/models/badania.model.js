@@ -12,13 +12,21 @@ const badaniaModel = mongoose.Schema(
       type: String,
       //required: true,
     },
-    zbadano: {
+    firma: {
       type: String,
       //required: true,
     },
-    text: {
+    produkcja: {
       type: String,
-      //required: [true, 'Please add a text value'],
+      //required: true,
+    },
+    info: {
+      type: String,
+      //required: true,
+    },
+    zbadano: {
+      type: String,
+      //required: true,
     },
     //startdate: { type: Date, required: true },
   },

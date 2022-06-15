@@ -41,14 +41,35 @@ const badaniaSposob = [
   },
  
 ];
+const status = [
+  {
+    label: "pilne",
+    value: "one",
+  },
+  {
+    label: "pilne pilne",
+    value: "two",
+  },
+  {
+    label: "pilne pilne pilne",
+    value: "three",
+  },
+  {
+    label: "pilne pilne pilne pilne",
+    value: "three",
+  },
+ 
+];
 function BadaniaAll() {
   const [info_badania, set_info_badania] = useState({
     produkt: '',
+    firma: '',
+    produkcja: '',
+    info: '',
     zbadano: '',
-    text: '',
   })
 //
-  const { produkt, zbadano, text } = info_badania
+  const { produkt, firma, produkcja, info, zbadano } = info_badania
 //
   const dispatch = useDispatch()
 
@@ -63,8 +84,10 @@ function BadaniaAll() {
 
     const badaniaData = {
       produkt,
+      firma,
+      produkcja,
+      info,
       zbadano,
-      text,
     }
 //
     dispatch(dodajBadanie(badaniaData))
@@ -87,31 +110,81 @@ function BadaniaAll() {
             onChange={onChange}
           />
         </div>
+
         <div className='form-group'>
-        <p>text:</p>
+        <p>Firma:</p>
           <input
             type='text'
-            name='zbadano'
-            id='zbadano'
-            value={zbadano}
-            placeholder='zbadano?'
+            name='firma'
+            id='firma'
+            value={firma}
+            placeholder='podaj producenta'
+            onChange={onChange}
+          />
+        </div>
+
+        <div className='form-group'>
+        <p>Data produkcji:</p>
+          <input
+            type='text'
+            name='produkcja'
+            id='produkcja'
+            value={produkcja}
+            placeholder='podaj datę produkcji'
+            onChange={onChange}
+          />
+        </div>
+        
+
+        <div className='form-group'>
+        <p>Dodatkowe info:</p>
+          <input
+            type='text'
+            name='info'
+            id='info'
+            value={info}
+            placeholder='dodatkowe info'
             onChange={onChange}
           />
         </div>
 
         <div className="select-container">
+        <p>Rodzaj badań:</p>
           <select>
             {badaniaRodzaj.map((option) => (
               <option value={option.value}>{option.label}</option>
               ))}
           </select>
         </div>
+
         <div className="select-container">
+        <p>Norma:</p>
           <select>
             {badaniaSposob.map((option) => (
               <option value={option.value}>{option.label}</option>
               ))}
           </select>
+        </div>
+
+        <div className="select-container">
+        <p>status:</p>
+          <select>
+            {status.map((option) => (
+              <option value={option.value}>{option.label}</option>
+              ))}
+          </select>
+        </div>
+
+        <div className='form-group'>
+        <p>zbadano:</p>
+          <input
+            type='text'
+            name='zbadano'
+            id='zbadano'
+            value={zbadano}
+            placeholder='podaj czy badanie zostalo wykonane'
+            onChange={onChange}
+          />
         </div>
 
         <div className='form-group'>

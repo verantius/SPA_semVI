@@ -29,8 +29,10 @@ const badania_add_new = asyncHandler(async (req, res, next) => {
         const badanie = new Badania ({
             user: req.user.id,
             produkt: req.body.produkt,
+            firma:req.body.firma,
+            produkcja:req.body.produkcja,
+            info:req.body.info,
             zbadano: req.body.zbadano,
-            text:req.body.text//<--
         })
         await badanie.save()
         res.status(200).json(badanie)
@@ -61,8 +63,18 @@ const badania_add_new = asyncHandler(async (req, res, next) => {
             Badania.findById(req.params.id)
             .then(badanie => {
                 badanie.produkt = req.body.produkt;
+                badanie.firma = req.body.firma;
+                badanie.produkcja = req.body.produkcja;
+                badanie.info = req.body.info;
                 badanie.zbadano = req.body.zbadano;
-           
+
+            /*
+                produkt: req.body.produkt,
+                firma:req.body.firma,
+                produkcja:req.body.produkcja,
+                info:req.body.info,
+                zbadano: req.body.zbadano,
+           */
             badanie.save()
                 .then(() => res.json('Exercise updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));
