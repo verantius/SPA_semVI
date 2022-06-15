@@ -7,29 +7,23 @@ function Home() {
     return (
       <main>
         <section id="showcase">
-        <div class="container">
             <h1>Laboratory manager</h1>
             <p>prosty program do trzymania w porzadku twoich analiz laboratoryjnych</p>
-        </div>
         </section>
+
+        <section id="container"></section>
             
 
-        <div className="justa">
-                
-                <SocialIcon url="https://twitter.com/robertmaklo" target="_blank" style={{height: 35, width: 35}}/>
-                <SocialIcon url="https://www.linkedin.com/in/adam-misiag-9027a4123/"  target="_blank"  style={{height: 35, width: 35}}/>
-                <SocialIcon url="https://github.com/verantius"  target="_blank"  style={{height: 35, width: 35}}/>
-                
-                
-        </div>
-
-        <footer>
-        <p>Acme Web Design, Copyright</p>
-        </footer>
-        </main>
+        <section className="footer">
         
+        <SocialIcon url="https://twitter.com/robertmaklo" target="_blank" style={{height: 35, width: 35, marginRight: 7, marginBottom: 10, marginTop: 10 }}/>
+        <SocialIcon url="https://www.linkedin.com/in/adam-misiag-9027a4123/"  target="_blank"  style={{height: 35, width: 35, marginRight: 7, marginBottom: 10, marginTop: 10}}/>
+        <SocialIcon url="https://github.com/verantius"  target="_blank"  style={{height: 35, width: 35, marginBottom: 10, marginTop: 10}}/>
         
+        <p>Copyright &copy; 2022</p>
         
+        </section>
+      </main>  
   )
 }
 
