@@ -1,9 +1,19 @@
 import React from 'react'
+import './home.css'
+
 import {SocialIcon} from "react-social-icons"
 
 function Home() {
     return (
-        
+      <main>
+        <section id="showcase">
+        <div class="container">
+            <h1>Laboratory manager</h1>
+            <p>prosty program do trzymania w porzadku twoich analiz laboratoryjnych</p>
+        </div>
+        </section>
+            
+
         <div className="justa">
                 
                 <SocialIcon url="https://twitter.com/robertmaklo" target="_blank" style={{height: 35, width: 35}}/>
@@ -12,6 +22,14 @@ function Home() {
                 
                 
         </div>
+
+        <footer>
+        <p>Acme Web Design, Copyright</p>
+        </footer>
+        </main>
+        
+        
+        
   )
 }
 
