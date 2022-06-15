@@ -11,7 +11,7 @@ Aplikacja została napisana z uyciem biblioteki React oraz Redux, natomiast czę
 npm install
 ```
 
-### Run React dev server (http://localhost:3000)
+### Run React server (http://localhost:3000)
 
 ```
 npm start
