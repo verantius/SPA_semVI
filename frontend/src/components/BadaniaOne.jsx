@@ -7,7 +7,7 @@ function BadaniaOne({ badanie }) {
 return (
   <div className='badanie'>
   
-  <h2>{badanie.produkt}</h2>
+  <h2>Produkt:  {badanie.produkt}</h2>
   <p>{badanie.zbadano}</p>
   <p>{badanie.text}</p>
   

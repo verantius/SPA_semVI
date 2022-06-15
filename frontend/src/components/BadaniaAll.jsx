@@ -2,28 +2,44 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {  BsPlus } from 'react-icons/bs'
 import { dodajBadanie } from '../features/badania/badaniaSlice'
-//import { option } from './MultiOption'
-const options = [
+
+const badaniaRodzaj = [
   {
     label: " ",
     value: " ",
   },
   {
-    label: "Apple",
-    value: "apple",
+    label: "Badania Mikrobiologiczne",
+    value: "one",
   },
   {
-    label: "Mango",
-    value: "mango",
+    label: "Badania Chemiczne",
+    value: "two",
   },
   {
-    label: "Banana",
-    value: "banana",
+    label: "Badania Fizykochemiczne",
+    value: "three",
+  },
+ 
+];
+const badaniaSposob = [
+  {
+    label: " ",
+    value: " ",
   },
   {
-    label: "Pineapple",
-    value: "pineapple",
+    label: "PN-IS0-3480284/KLD",
+    value: "one",
   },
+  {
+    label: "PN-IS0-865293/EOM",
+    value: "two",
+  },
+  {
+    label: "PN-ISO-251195/NXC",
+    value: "three",
+  },
+ 
 ];
 function BadaniaAll() {
   const [info_badania, set_info_badania] = useState({
@@ -31,9 +47,9 @@ function BadaniaAll() {
     zbadano: '',
     text: '',
   })
-
+//
   const { produkt, zbadano, text } = info_badania
-
+//
   const dispatch = useDispatch()
 
   const onChange = (e) => {
@@ -50,15 +66,18 @@ function BadaniaAll() {
       zbadano,
       text,
     }
-
+//
     dispatch(dodajBadanie(badaniaData))
     badaniaData('')
   }
+
+  
 
   return (
     <section className='form'>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
+        <p>Produkt:</p>
           <input
             type='text'
             name='produkt'
@@ -69,6 +88,7 @@ function BadaniaAll() {
           />
         </div>
         <div className='form-group'>
+        <p>text:</p>
           <input
             type='text'
             name='zbadano'
@@ -81,11 +101,17 @@ function BadaniaAll() {
 
         <div className="select-container">
           <select>
-            {options.map((option) => (
+            {badaniaRodzaj.map((option) => (
               <option value={option.value}>{option.label}</option>
               ))}
-              </select>
-              
+          </select>
+        </div>
+        <div className="select-container">
+          <select>
+            {badaniaSposob.map((option) => (
+              <option value={option.value}>{option.label}</option>
+              ))}
+          </select>
         </div>
 
         <div className='form-group'>
