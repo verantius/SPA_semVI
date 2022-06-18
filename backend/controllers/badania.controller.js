@@ -110,7 +110,6 @@ const badania_remove = asyncHandler(async (req, res, next) => {
 module.exports = {
     badania_get_all,
     badania_add_new,
-    //badania_get_by_id,
     badania_change,
     badania_remove,
 }

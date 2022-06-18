@@ -17,7 +17,7 @@ const user_sign_up = asyncHandler(async (req, res, next) => {
 
         if (!email || !password) {
             res.status(400).json({ wiadomosc: 'wypelnij wszystkie pola'})
-            //throw new Error('Please add all fields')
+            
         }
 
         else if (email.length < 3 || password.length < 3|| email.length > 16 ) {
@@ -28,24 +28,14 @@ const user_sign_up = asyncHandler(async (req, res, next) => {
 
         if (userExists) {
             res.status(400).json({ wiadomosc: 'user istnieje'})
-            //throw new Error('User already exists')
+            
         }
 
         // Hash password
         const salt = await bcrypt.genSalt(10)
         const hash = await bcrypt.hash(password, salt)
-            //my
-            // const user = new User ({
-            //     email: email,
-            //     password: hash
-                
-            // })
-            // await user.save()
-            
-            //res.status(200).json({ wiadomosc: 'gratuluję! utworzono nowego użytownika'})
-//brad
+//
             const user = await User.create({
-                //name,
                 email,
                 password: hash,
             })
@@ -53,13 +43,12 @@ const user_sign_up = asyncHandler(async (req, res, next) => {
             if (user) {
                 res.status(201).json({
                 _id: user.id,
-               // name: user.name,
                 email: user.email,
                 token: generateToken(user._id),
                 })
             } else {
                 res.status(400)
-                throw new Error('Invalid user data')
+                throw new Error('błedne dane!')
             }
 
 
@@ -89,12 +78,7 @@ const user_login = asyncHandler(async (req, res) => {
     }
 })
 
-
-// const getMe = asyncHandler(async (req, res) => {
-//   res.status(200).json(req.user)
-// })
-
-// Generate JWT
+// generowanie jwt
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_USE, {expiresIn: '25m'})
 }
