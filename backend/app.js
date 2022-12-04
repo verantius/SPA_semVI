@@ -24,6 +24,13 @@ app.use(morgan('combined'));
 app.use('/users', require('./routes/users'))
 app.use('/badania', require('./routes/badania'))
 
+
+app.get("/", (req, res, next) =>{
+  //const id = req.params.id;
+  res.status(200).json({wiadomosc: 'server OK' })
+})
+
+
 app.use((req, res, next) => {
   res.status(400).json({ wiadomosc: 'Brak danych' });
 });
